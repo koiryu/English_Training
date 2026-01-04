@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal English Training</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Personal English Training</p>
+        <h1>あなた専用の5分英会話トレーニング</h1>
+        <p class="sub">
+          簡単なテスト → あなたの特性に合わせた会話 → 評価と改善点のフィードバック。
+        </p>
+      </div>
+      <div class="hero-card">
+        <h2>今日の流れ</h2>
+        <ol>
+          <li>簡単なレベルチェック</li>
+          <li>状況別トレーニング (5分以内)</li>
+          <li>評価と次回への改善提案</li>
+        </ol>
+      </div>
+    </header>
+
+    <main>
+      <section class="card" id="test">
+        <div class="section-header">
+          <h2>Step 1. レベルチェック</h2>
+          <span class="chip">所要時間: 約1分</span>
+        </div>
+        <div id="test-questions" class="question-list"></div>
+        <button class="primary" id="start-training" disabled>結果からトレーニングを作成</button>
+        <p id="test-feedback" class="muted"></p>
+      </section>
+
+      <section class="card" id="training">
+        <div class="section-header">
+          <h2>Step 2. 今日のトレーニング</h2>
+          <span class="chip" id="training-duration">5分以内</span>
+        </div>
+        <div class="training-layout">
+          <div class="illustration" id="scene-illustration"></div>
+          <div class="training-content">
+            <h3 id="scene-title">シチュエーション</h3>
+            <p id="scene-description" class="muted"></p>
+            <div class="focus">
+              <h4>今日のフォーカス</h4>
+              <ul id="focus-list"></ul>
+            </div>
+            <div class="dialogue" id="dialogue"></div>
+            <label class="practice">
+              あなたの返答メモ
+              <textarea id="practice-input" rows="4" placeholder="英語で返答を書いてみましょう"></textarea>
+            </label>
+            <button class="secondary" id="finish-training">トレーニング完了</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" id="evaluation">
+        <div class="section-header">
+          <h2>Step 3. 評価とフィードバック</h2>
+          <span class="chip">今日のまとめ</span>
+        </div>
+        <div class="evaluation-grid">
+          <div>
+            <h3>自己評価</h3>
+            <div class="rating">
+              <label><input type="radio" name="confidence" value="1" />1</label>
+              <label><input type="radio" name="confidence" value="2" />2</label>
+              <label><input type="radio" name="confidence" value="3" />3</label>
+              <label><input type="radio" name="confidence" value="4" />4</label>
+              <label><input type="radio" name="confidence" value="5" />5</label>
+            </div>
+            <p class="muted">自信度を選んでください</p>
+            <h4>難しかったところ</h4>
+            <div class="checks">
+              <label><input type="checkbox" value="語彙" />語彙</label>
+              <label><input type="checkbox" value="文法" />文法</label>
+              <label><input type="checkbox" value="発音" />発音</label>
+              <label><input type="checkbox" value="流暢さ" />流暢さ</label>
+            </div>
+          </div>
+          <div>
+            <h3>評価</h3>
+            <p id="evaluation-summary" class="muted">トレーニング完了後に評価が表示されます。</p>
+            <div class="feedback">
+              <div>
+                <h4>良かった点</h4>
+                <ul id="strengths"></ul>
+              </div>
+              <div>
+                <h4>改善点</h4>
+                <ul id="improvements"></ul>
+              </div>
+            </div>
+            <button class="primary" id="save-plan">次回トレーニングに反映</button>
+            <p id="save-feedback" class="muted"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>あなたの特性に合わせた英会話トレーニングを毎日更新します。</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
